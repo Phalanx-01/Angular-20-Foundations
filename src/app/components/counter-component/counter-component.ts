@@ -3,6 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-counter',
+  standalone: true,
   imports: [],
   templateUrl: './counter-component.html',
   styleUrl: './counter-component.css'

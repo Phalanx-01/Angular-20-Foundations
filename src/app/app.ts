@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CounterComponent } from './components/counter-component/counter-component';
+import { SimpleTimerComponent } from './components/simple-timer-component/simple-timer-component';
+import { MessageComponent } from './components/message-component/message-component';
+import { EvenTimerComponent } from './components/even-timer-component/even-timer-component';
+import { UserListComponent } from './components/user-list-component/user-list-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CounterComponent],
+  imports: [RouterOutlet, CounterComponent, SimpleTimerComponent, MessageComponent, EvenTimerComponent, UserListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
