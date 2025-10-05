@@ -17,4 +17,5 @@ export class UserListComponent {
   constructor(private http: HttpClient) {
     this.users$ = this.http.get<any[]>('https://jsonplaceholder.typicode.com/users');
   }
+
 }
