@@ -15,5 +15,5 @@ export class ProductListComponent {
   constructor(private http: HttpClient) {
     this.products$ = this.http.get<any[]>('https://fakestoreapi.com/products');
   }
-
+  
 }

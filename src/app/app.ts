@@ -6,10 +6,12 @@ import { MessageComponent } from './components/message-component/message-compone
 import { EvenTimerComponent } from './components/even-timer-component/even-timer-component';
 import { UserListComponent } from './components/user-list-component/user-list-component';
 import { ProductListComponent } from './components/product-list-component/product-list-component';
+import { LiveSearchComponent } from './components/live-search-component/live-search-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CounterComponent, SimpleTimerComponent, MessageComponent, EvenTimerComponent, UserListComponent, ProductListComponent],
+  imports: [RouterOutlet, CounterComponent, SimpleTimerComponent, MessageComponent, EvenTimerComponent, UserListComponent, ProductListComponent,
+     LiveSearchComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
