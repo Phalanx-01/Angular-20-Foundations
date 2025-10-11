@@ -7,11 +7,12 @@ import { EvenTimerComponent } from './components/even-timer-component/even-timer
 import { UserListComponent } from './components/user-list-component/user-list-component';
 import { ProductListComponent } from './components/product-list-component/product-list-component';
 import { LiveSearchComponent } from './components/live-search-component/live-search-component';
+import { SignalUsersComponent } from './components/signal-users-component/signal-users-component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CounterComponent, SimpleTimerComponent, MessageComponent, EvenTimerComponent, UserListComponent, ProductListComponent,
-     LiveSearchComponent],
+     LiveSearchComponent, SignalUsersComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

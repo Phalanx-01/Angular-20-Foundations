@@ -1,0 +1,7 @@
+@if(users().length > 0) {
+    @for(user of users(); track user.id) {
+        <div>{{ user.name }}</div>
+    }
+} @else {
+    <div>Loading users...</div>
+}
