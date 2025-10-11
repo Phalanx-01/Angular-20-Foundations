@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-signal-users',
@@ -12,7 +13,9 @@ export class SignalUsersComponent {
   users;
 
   constructor(private http: HttpClient) {
-    this.users = toSignal(this.http.get<any[]>(`https://jsonplaceholder.typicode.com/users`), { initialValue: [] });
+    this.users = toSignal(this.http.get<any[]>(`https://jsonplaceholder.typicode.com/users`).pipe(
+      catchError(error => { return of([])})
+    ), { initialValue: [] });
   }
 
 }
