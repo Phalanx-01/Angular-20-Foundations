@@ -19,6 +19,10 @@ deserializer: (msg) => msg.data});
 
 constructor(private http: HttpClient) {}
 
+ngOnInit(): void {
+  this.initWebSocket();
+}
+
 ngAfterViewInit(){
   this.users$ = fromEvent<Event>(this.searchBox.nativeElement, 'input').pipe(
     map((event:Event) => (event.target as HTMLInputElement).value),
@@ -28,12 +32,15 @@ ngAfterViewInit(){
       this.http.get<any[]>(`https://jsonplaceholder.typicode.com/users?q=${query}`)
     )
   );
+ }
 
+ private initWebSocket(): void {
   this.socket$.subscribe(
   msg => console.log('Received', msg), 
   err => console.error(err),
   ()=>console.log('Complete')
   );
+  this.socket$.next('Hello from Angular');
  }
 
 }
