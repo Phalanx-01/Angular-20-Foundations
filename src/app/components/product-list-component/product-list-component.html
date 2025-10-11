@@ -1,0 +1,10 @@
+<h2>Products</h2>
+@if(products$ | async; as products) {
+ <ul>
+    @for (product of products; track product.id) {
+     <li>{{ product.title }}</li>
+    }
+ </ul>
+} @else {
+    <div>Loading products...</div>
+}
