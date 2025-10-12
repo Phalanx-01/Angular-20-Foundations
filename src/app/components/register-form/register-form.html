@@ -1,0 +1,7 @@
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <input formControlName="username" placeholder="Username">
+    <input formControlName="email" placeholder="Email">
+    <input formControlName="password" placeholder="Password" type="password">
+    <button type="submit">Register</button>
+</form>
+<pre>{{ registerForm.value | json }} </pre>

@@ -8,11 +8,12 @@ import { UserListComponent } from './components/user-list-component/user-list-co
 import { ProductListComponent } from './components/product-list-component/product-list-component';
 import { LiveSearchComponent } from './components/live-search-component/live-search-component';
 import { SignalUsersComponent } from './components/signal-users-component/signal-users-component';
+import { RegisterForm } from './components/register-form/register-form';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CounterComponent, SimpleTimerComponent, MessageComponent, EvenTimerComponent, UserListComponent, ProductListComponent,
-     LiveSearchComponent, SignalUsersComponent],
+     LiveSearchComponent, SignalUsersComponent, RegisterForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
