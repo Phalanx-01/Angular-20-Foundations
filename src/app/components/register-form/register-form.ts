@@ -62,4 +62,10 @@ submit(){
   }
  }
 
+ngOnInit() {
+  this.registerForm.valueChanges.subscribe(value => {
+    console.log('Form changed',value);
+  });
+}
+
 }
