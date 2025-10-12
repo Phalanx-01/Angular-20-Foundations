@@ -2,6 +2,15 @@
     <input formControlName="username" placeholder="Username">
     <input formControlName="email" placeholder="Email">
     <input formControlName="password" placeholder="Password" type="password">
+    <div formArrayName="phones">
+        @for (phone of phones.controls; track $index) {
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <input [formControlName]="$index" placeholder="Telefonnumber">
+                <button type="button" (click)="removePhone($index)">Remove</button>
+            </div>
+        }
+        <button type="button" (click)="addPhone()">+ Phonenumber</button>
+    </div>
     <button type="submit">Register</button>
 </form>
 <pre>{{ registerForm.value | json }} </pre>
