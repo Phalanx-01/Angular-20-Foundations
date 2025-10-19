@@ -6,4 +6,7 @@
 <p></p>
 <span> Times 2 computed [{{ total() }}]</span>
 <p> Effect message [{{ counter() }}]</p>
-
+<button (click)="dec()">-</button>
+<span>{{ counter3$ | async }}</span>
+<button (click)="inc()">+</button>
+<button (click)="resetCounter()">Reset</button>

@@ -1,10 +1,13 @@
 import { Component, signal, computed, effect } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { decrement, increment, reset } from '../../store/actions/counter-actions';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './counter-component.html',
   styleUrl: './counter-component.css'
 })
@@ -16,9 +19,11 @@ export class CounterComponent {
     this.http.get('/api/countries'),
     {initialValue: []}
   ); */
+  counter3$: Observable<number>;
 
-  constructor() {
+  constructor(private store: Store<{counter:number}>) {
     effect(()=> console.log('Counter changed:',this.counter()));
+    this.counter3$ = this.store.select('counter');
   }
   
 
@@ -33,5 +38,9 @@ export class CounterComponent {
   delete(){
     this.counter.set(0);
   }
+
+  inc() {this.store.dispatch(increment());}
+  dec() {this.store.dispatch(decrement());}
+  resetCounter() {this.store.dispatch(reset());}
 
 }
