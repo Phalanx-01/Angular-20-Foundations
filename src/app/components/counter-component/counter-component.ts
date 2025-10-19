@@ -29,10 +29,12 @@ export class CounterComponent {
 
   increment(){
     this.counter.update(v => v+1);
+    //this.store.dispatch(increment());
   }
 
   decrement(){
     this.counter.update(v => v-1);
+    //this.store.dispatch(decrement());
   }
 
   delete(){
