@@ -5,3 +5,15 @@
     <button (click)="login()">Login</button>
     <button (click) = "auth.logout()">Logout</button>
 </div>
+<div class="search-bar">
+    <input type="text" [(ngModel)]="itemName" placeholder="Enter item Name"(keyup.enter)="addItem()">
+    <button (click)="addItem()">Add Item</button>
+</div>
+<ul>
+    @for(item of cartItems$ | async; track item) {
+        <li>
+            {{ item }}
+            <button (click)="removeItem(item)">Remove</button>
+        </li>
+    }
+</ul>
