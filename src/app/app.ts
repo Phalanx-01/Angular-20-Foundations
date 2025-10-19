@@ -9,11 +9,12 @@ import { ProductListComponent } from './components/product-list-component/produc
 import { LiveSearchComponent } from './components/live-search-component/live-search-component';
 import { SignalUsersComponent } from './components/signal-users-component/signal-users-component';
 import { RegisterForm } from './components/register-form/register-form';
+import { HeaderComponent } from './components/header-component/header-component';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, CounterComponent, SimpleTimerComponent, MessageComponent, EvenTimerComponent, UserListComponent, ProductListComponent,
-     LiveSearchComponent, SignalUsersComponent, RegisterForm],
+     LiveSearchComponent, SignalUsersComponent, RegisterForm, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

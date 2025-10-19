@@ -1,0 +1,7 @@
+<div @if(auth.isAuthenticated())>
+    Welcome, {{ auth.userName() }}!
+</div>
+<div @if(!auth.isAuthenticated())>
+    <button (click)="login()">Login</button>
+    <button (click) = "auth.logout()">Logout</button>
+</div>
